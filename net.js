@@ -3,6 +3,8 @@ function Net(){
   this.L1o = [];
   //output after layer 2
   this.L2o = [];
+  //output after layer 3
+  this.L3o = [];
   //weights for layer 1 of synapses
   this.L1nw = [random(0,1),random(0,1),random(0,1),random(0,1),
                random(0,1),random(0,1),random(0,1),random(0,1),
@@ -46,7 +48,7 @@ function Net(){
     //write results of layer one to a results list
     this.L1o = [this.L1n1,this.L1n2,this.L1n3,this.L1n4,this.L1n5,
                 this.L1n6,this.L1n7,this.L1n8,this.L1n9,this.L1n10,
-                this.L1n11,this.L1n12,this.L1n13,this.L1n14,this.L1n15]
+                this.L1n11,this.L1n12,this.L1n13,this.L1n14,this.L1n15];
     //synapses for layer two with weights factored
     this.L2syn = [this.L1n1*this.L2nw[0],this.L1n2*this.L2nw[1],this.L1n3*this.L2nw[2],
                   this.L1n4*this.L2nw[3],this.L1n5*this.L2nw[4],this.L1n6*this.L2nw[5],
@@ -59,6 +61,8 @@ function Net(){
     this.L2n3 = Sig3(this.L2syn[6],this.L2syn[7],this.L2syn[8]);    //7,8,9
     this.L2n4 = Sig3(this.L2syn[9],this.L2syn[10],this.L2syn[11]);  //10,11,12
     this.L2n5 = Sig3(this.L2syn[12],this.L2syn[13],this.L2syn[14]); //13,14,15
+    //write results of layer two to a results list
+    this.L2o = [this.L2n1,this.L2n2,this.L2n3,this.L2n4,this.L2n5];
     //synapses for layer three with weights factored
     this.L3syn = [this.L2n1*this.L3nw[0],this.L2n2*this.L3nw[1],this.L2n2*this.L3nw[2],
                   this.L2n3*this.L3nw[3],this.L2n3*this.L3nw[4],this.L2n4*this.L3nw[5],
@@ -71,5 +75,8 @@ function Net(){
     this.L3n4 = Sig2(this.L3syn[6],this.L3syn[7]);
     this.L3n5 = Sig2(this.L3syn[8],this.L3syn[9]);
     this.L3n6 = Sig2(this.L3syn[10],this.L3syn[11]);
+    //write results of layer three to a results list
+    this.L3o = [this.L3n1,this.L3n2,this.L3n3]
+    //generating the output
   }
 }
