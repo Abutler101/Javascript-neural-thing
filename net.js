@@ -12,9 +12,11 @@ function Net(){
                random(0,1),random(0,1),random(0,1),random(0,1),
                random(0,1),random(0,1),random(0,1),random(0,1)];
   //weights for layer 3 of synapses
-  this.L3nw = []
+  this.L3nw = [random(0,1),random(0,1),random(0,1),random(0,1),
+               random(0,1),random(0,1),random(0,1),random(0,1),
+               random(0,1),random(0,1),random(0,1),random(0,1)]
   //final output
-  this.o = null;
+  this.o = [0,0];
   this.update = function(rawIn){
     this.I1=rawIn[0]; //color value
     this.I2=rawIn[1]; //color value
@@ -58,7 +60,16 @@ function Net(){
     this.L2n4 = Sig3(this.L2syn[9],this.L2syn[10],this.L2syn[11]);  //10,11,12
     this.L2n5 = Sig3(this.L2syn[12],this.L2syn[13],this.L2syn[14]); //13,14,15
     //synapses for layer three with weights factored
-
+    this.L3syn = [this.L2n1*this.L3nw[0],this.L2n2*this.L3nw[1],this.L2n2*this.L3nw[2],
+                  this.L2n3*this.L3nw[3],this.L2n3*this.L3nw[4],this.L2n4*this.L3nw[5],
+                  this.L2n4*this.L3nw[6],this.L2n5*this.L3nw[7],this.L2n1*this.L3nw[8],
+                  this.L2n5*this.L3nw[9],this.L2n2*this.L3nw[10],this.L2n4*this.L3nw[11]];
+    //generating the nodes of layer three - 6 nodes
+    this.L3n1 = Sig2(this.L3syn[0],this.L3syn[1]);
+    this.L3n2 = Sig2(this.L3syn[2],this.L3syn[3]);
+    this.L3n3 = Sig2(this.L3syn[4],this.L3syn[5]);
+    this.L3n4 = Sig2(this.L3syn[6],this.L3syn[7]);
+    this.L3n5 = Sig2(this.L3syn[8],this.L3syn[9]);
+    this.L3n6 = Sig2(this.L3syn[10],this.L3syn[11]);
   }
 }
-//hi there
