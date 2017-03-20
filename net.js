@@ -76,7 +76,8 @@ function Net(){
     this.L3n5 = Sig2(this.L3syn[8],this.L3syn[9]);
     this.L3n6 = Sig2(this.L3syn[10],this.L3syn[11]);
     //write results of layer three to a results list
-    this.L3o = [this.L3n1,this.L3n2,this.L3n3]
+    this.L3o = [this.L3n1,this.L3n2,this.L3n3,this.L3n4,this.L3n5,this.L3n6];
     //generating the output
+    
   }
 }
