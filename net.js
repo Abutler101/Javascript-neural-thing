@@ -20,12 +20,17 @@ function Net(){
   //final output
   this.o = [0,0];
   this.update = function(rawIn){
-    this.I1=rawIn[0]; //color value
+    this.I1=rawIn[0];//color value
+    if(this.I1 == 255){this.I1=1};
     this.I2=rawIn[1]; //color value
+    if(this.I2 == 255){this.I2=1};
     this.I3=rawIn[2]; //color value
+    if(this.I3 == 255){this.I3=1};
     this.I4=rawIn[3]; //color value
+    if(this.I4 == 255){this.I4=1};
     this.I5=rawIn[4]; //color value
-    this.I6=rawIn[5]; //Y pos in abstract form
+    if(this.I5 == 255){this.I5=1};
+    this.I6=rawIn[5]/10; //Y pos in abstract form divided by ten to please the sigmoid god
     //synapses for layer one with weights factored
     this.L1syn = [this.I1*this.L1nw[0],this.I2*this.L1nw[1],this.I3*this.L1nw[2],
                   this.I4*this.L1nw[3],this.I5*this.L1nw[4],this.I6*this.L1nw[5]];
@@ -78,6 +83,7 @@ function Net(){
     //write results of layer three to a results list
     this.L3o = [this.L3n1,this.L3n2,this.L3n3,this.L3n4,this.L3n5,this.L3n6];
     //generating the output
-    
+    this.L4n1 = Sig3(this.L3n1,this.L3n5,this.L3n6);
+    this.L4n2 = Sig3(this.L3n2,this.L3n3,this.L3n4);
   }
 }
