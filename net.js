@@ -87,5 +87,6 @@ function Net(){
     //generating the output
     this.L4n1 = Sig3(this.L3n1,this.L3n5,this.L3n6);
     this.L4n2 = Sig3(this.L3n2,this.L3n3,this.L3n4);
+    this.o=[this.L4n1,this.L4n2];
   }
 }
