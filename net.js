@@ -1,4 +1,4 @@
-function Net(){
+function Net(genes){
   //output after Layer 1
   this.L1o = [];
   //output after layer 2
@@ -6,19 +6,26 @@ function Net(){
   //output after layer 3
   this.L3o = [];
   //weights for layer 1 of synapses
-  this.L1nw = [random(0,1),random(0,1),random(0,1),random(0,1),
-               random(0,1),random(0,1),random(0,1),random(0,1),
-               random(0,1),random(0,1),random(0,1),random(0,1)];
-  //weights for layer 2 of synapses
-  this.L2nw = [random(0,1),random(0,1),random(0,1),random(0,1),
-               random(0,1),random(0,1),random(0,1),random(0,1),
-               random(0,1),random(0,1),random(0,1),random(0,1),
-               random(0,1),random(0,1),random(0,1),random(0,1)];
-  //weights for layer 3 of synapses
-  this.L3nw = [random(0,1),random(0,1),random(0,1),random(0,1),
-               random(0,1),random(0,1),random(0,1),random(0,1),
-               random(0,1),random(0,1),random(0,1),random(0,1),
-               random(0,1),random(0,1),random(0,1),random(0,1)]
+  if(genes.length!=0){
+    this.L1nw = genes[0];
+    this.L2nw = genes[1];
+    this.L3nw = genes[2];
+  }
+  else{
+    this.L1nw = [random(0,1),random(0,1),random(0,1),random(0,1),
+                 random(0,1),random(0,1),random(0,1),random(0,1),
+                 random(0,1),random(0,1),random(0,1),random(0,1)];
+    //weights for layer 2 of synapses
+    this.L2nw = [random(0,1),random(0,1),random(0,1),random(0,1),
+                 random(0,1),random(0,1),random(0,1),random(0,1),
+                 random(0,1),random(0,1),random(0,1),random(0,1),
+                 random(0,1),random(0,1),random(0,1),random(0,1)];
+    //weights for layer 3 of synapses
+    this.L3nw = [random(0,1),random(0,1),random(0,1),random(0,1),
+                 random(0,1),random(0,1),random(0,1),random(0,1),
+                 random(0,1),random(0,1),random(0,1),random(0,1),
+                 random(0,1),random(0,1),random(0,1),random(0,1)]
+  }
   //final output
   this.o = [0,0];
   this.update = function(rawIn){

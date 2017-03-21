@@ -3,13 +3,21 @@ function Bot(){
   this.y = 215;
   this.yAb = 0;
   this.score = 0;
-  this.Net=new Net();
+  this.genes = [];
+  this.Net=new Net(this.genes);
+  this.Kill = function(){
+    this.genes = [this.Net.L1nw,this.Net.L2nw,this.Net.L3nw];
+    console.log("I Died");
+    Bots.pop();
+  }
+
   this.show = function(){
     this.update();
     colorMode(RGB);
     fill(0,0,225);
     rect(this.x,this.y,70,70);
   }
+  
   this.update = function(){
     this.composite =[];
     this.score ++;
@@ -23,4 +31,5 @@ function Bot(){
     this.composite.push(this.yAb);
     this.Net.update(this.composite);
   }
+
 }
