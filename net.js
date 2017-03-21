@@ -17,6 +17,7 @@ function Net(){
   //weights for layer 3 of synapses
   this.L3nw = [random(0,1),random(0,1),random(0,1),random(0,1),
                random(0,1),random(0,1),random(0,1),random(0,1),
+               random(0,1),random(0,1),random(0,1),random(0,1),
                random(0,1),random(0,1),random(0,1),random(0,1)]
   //final output
   this.o = [0,0];
