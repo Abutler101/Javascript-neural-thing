@@ -8,9 +8,9 @@ function Bot(){
   this.Kill = function(){
     this.genes = [this.Net.L1nw,this.Net.L2nw,this.Net.L3nw];
     console.log("I Died");
+    CGen.push([this.genes,this.score]);
     Bots.pop();
   }
-
   this.show = function(){
     this.update();
     colorMode(RGB);
@@ -20,7 +20,7 @@ function Bot(){
   this.update = function(){
     this.composite =[];
     this.score ++;
-    if(this.y == 15) {this.yAb = 1;console.log(1);}
+    if(this.y == 15) {this.yAb = 1;}
     else if(this.y == 115) {this.yAb = 2;}
     else if(this.y == 215) {this.yAb = 3;}
     else if(this.y == 315) {this.yAb = 4;}
@@ -29,6 +29,8 @@ function Bot(){
     this.composite = this.Sight;
     this.composite.push(this.yAb);
     this.Net.update(this.composite);
+    if(this.Net.o[0]>this.Net.o[1]&&this.y>100){this.y -=100};
+    if(this.Net.o[1]>this.Net.o[0]&&this.y<400){this.y +=100};
   }
 
 }
