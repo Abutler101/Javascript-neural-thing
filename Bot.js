@@ -17,7 +17,6 @@ function Bot(){
     fill(0,0,225);
     rect(this.x,this.y,70,70);
   }
-  
   this.update = function(){
     this.composite =[];
     this.score ++;
