@@ -14,7 +14,7 @@ function Populate(){
     CGen.sort(twod);
     PGen = CGen;
     CGen = [];
-    NGen = Evolve(PGen);
+    NGen = Evolve();
   }
 }
 
