@@ -1,2 +1,2 @@
 # Javascript-neural-thing
-nope, just nope
+417 lines of un-planned poorly structured javascript to evolve a simple game playing Bot
