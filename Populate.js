@@ -15,6 +15,9 @@ function Populate(){
     PGen = CGen;
     CGen = [];
     Evolve();
+    Populate()
+    Gen ++;
+    console.log(Gen);
   }
 }
 
