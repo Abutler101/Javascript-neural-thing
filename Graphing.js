@@ -17,6 +17,7 @@ function draw() {
 	line(310,350,310,370);//Gen6
 	line(355,350,355,370);//Gen7
 	line(400,350,400,370);//Gen8
+	line(445,350,445,370);//Gen9
 //END SETUP
 
 
