@@ -8,6 +8,7 @@ function Bot(){
   this.Kill = function(){
     this.genes = [this.Net.L1nw,this.Net.L2nw,this.Net.L3nw];
     console.log("I Died");
+    GenScore+=this.score;
     CGen.push([this.genes,this.score]);
     Bots.pop();
   }
